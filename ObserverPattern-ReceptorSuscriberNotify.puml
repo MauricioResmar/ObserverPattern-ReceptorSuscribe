@@ -1,0 +1,34 @@
+@startuml
+class Main {
++ {static} void main(String[])
+}
+
+class ReceptorSatelite {
++ void recibe()
+}
+
+class ReceptorRadio {
++ void recibe()
+}
+
+class ReceptorTv {
++ void recibe()
+}
+
+interface Receptor {
+~ void recibe()
+}
+
+class Emisora {
+- ArrayList<Receptor> receptor
++ void addReceptor(Receptor)
++ void emite()
+}
+
+
+
+
+Receptor <|.. ReceptorSatelite
+Receptor <|.. ReceptorRadio
+Receptor <|.. ReceptorTv
+@enduml
